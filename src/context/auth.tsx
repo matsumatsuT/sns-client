@@ -39,9 +39,13 @@ export const AuthProvider = ({children}: AuthProviderProps) =>  {
     const token = localStorage.getItem("auth_token")
     if(token) {
       apiClient.defaults.headers["Authorization"] = `Barer ${token}`
-      apiClient.get("/users/find").then((res) => {
+      const  test = apiClient.get("/users/find").then((res) => {
         setUser(res.data.user)
+      }).catch((err) => {
+        console.log("エラー発火")
+        localStorage.removeItem("auth_token")
       })
+      console.log(test)
     }
   }, [])
 

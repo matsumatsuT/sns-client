@@ -13,6 +13,7 @@ const defaultValues = {
 }
 
 export const Timeline = () => {
+  
   const [posts, setPosts] = useState<PostsType[]>([])
   const {register, handleSubmit, reset} = useForm<Inputs>({
     defaultValues
@@ -24,6 +25,8 @@ export const Timeline = () => {
   }
 
   useEffect(() => {
+    const token = localStorage.getItem("auth_token")
+    if(!token) return
     fetchPosts()
   },[])
 
@@ -36,7 +39,7 @@ export const Timeline = () => {
       reset()
 
     }catch(err) {
-      alert("フロントのエラーです")
+      alert("ログインして下さい")
     }
   }
 

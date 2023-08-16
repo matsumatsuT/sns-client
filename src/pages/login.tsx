@@ -25,7 +25,7 @@ const Login = () => {
       router.push("/")
 
     }catch(err) {
-      alert(err)
+      alert("ログインに失敗しました")
     }
   }
 
