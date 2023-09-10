@@ -1,10 +1,10 @@
 ## SNSクローン
-udemy講座
+udemy講座</br>
 https://www.udemy.com/course/fullstack-sns-development/
 
 ## 技術スタック
-Next.js
-TypeScript
+Next.js</br>
+TypeScript</br>
 Vercel
 
 ## メモ
